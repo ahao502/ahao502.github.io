@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI需求雷达 - AI Demand Radar</title>
+<style>
+  :root { --bg:#0e2036; --card:#152b45; --fg:#e6f1f8; --muted:#9fb6c9; --accent:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:linear-gradient(180deg,#0e2036,#081424); color:var(--fg);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+         line-height:1.75; }
+  .wrap { max-width:760px; margin:0 auto; padding:64px 24px 80px; }
+  header { display:flex; align-items:center; gap:16px; margin-bottom:8px; }
+  header img { width:64px; height:64px; border-radius:16px; }
+  h1 { font-size:26px; margin:0; letter-spacing:.5px; }
+  .sub { color:var(--muted); font-size:14px; margin:6px 0 0; }
+  h2 { font-size:17px; margin:36px 0 10px; color:var(--accent); }
+  p, li { font-size:15px; }
+  ul { padding-left:22px; }
+  .card { background:var(--card); border:1px solid rgba(56,189,248,.18); border-radius:12px; padding:18px 20px; margin:18px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:48px; padding-top:20px; border-top:1px solid rgba(159,182,201,.2);
+           color:var(--muted); font-size:13px; }
+  code { background:rgba(56,189,248,.12); padding:2px 6px; border-radius:5px; font-size:13px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="app_icon_120.png" alt="AI需求雷达">
+    <div>
+      <h1>AI需求雷达</h1>
+      <p class="sub">AI Demand Radar &middot; 个人使用的需求采集与分析工具</p>
+    </div>
+  </header>
+
+  <div class="card">
+    <p>这是一个<strong>个人自用的本地程序</strong>，仅供账号所有者本人使用，不对外提供任何服务。</p>
+  </div>
+
+  <h2>这个应用做什么</h2>
+  <p>AI需求雷达帮助使用者从公开渠道收集软件与数字化相关的需求信息，借助大语言模型做结构化整理，并把结果汇总到自己的 Google 表格中，最后通过邮件发送报告。具体包括：</p>
+  <ul>
+    <li>在<strong>使用者本人已登录</strong>的浏览器会话中，读取其本人搜索结果可见的公开内容；</li>
+    <li>调用第三方大语言模型服务，对文本做分类、摘要与评分；</li>
+    <li>把整理后的结果写入<strong>使用者本人拥有</strong>的 Google 表格；</li>
+    <li>通过 Gmail 向<strong>使用者本人预设的固定邮箱</strong>发送中文报告。</li>
+  </ul>
+
+  <h2>它会访问哪些 Google 数据</h2>
+  <ul>
+    <li><code>https://www.googleapis.com/auth/spreadsheets</code> —— 读写使用者本人的 Google 表格。</li>
+    <li><code>https://www.googleapis.com/auth/gmail.send</code> —— 以使用者本人身份发送报告邮件。</li>
+  </ul>
+  <p><strong>不请求任何邮箱读取权限</strong>，无法查看、搜索或删除使用者的任何邮件。</p>
+
+  <h2>数据如何被使用与保存</h2>
+  <ul>
+    <li>所有采集与分析结果保存在使用者本机，不上传到任何第三方服务器；</li>
+    <li>Google 数据仅用于上述功能，<strong>不用于广告、不用于训练模型、不向任何第三方分享或出售</strong>；</li>
+    <li>使用者可随时在 Google 账号的「第三方应用与权限」页面撤销本应用的访问权限。</li>
+  </ul>
+
+  <h2>隐私权政策</h2>
+  <p>完整的隐私权政策请见：<a href="privacy.html">隐私权政策 / Privacy Policy</a></p>
+
+  <h2>常见问题</h2>
+  <p><strong>这个应用对外提供服务吗？</strong><br>不提供。它只在使用者本人的电脑上运行，没有任何服务器端服务，也没有公开注册入口。</p>
+  <p><strong>为什么不通过 Google 验证？</strong><br>因为它仅由账号所有者本人使用，属于 Google 政策中「个人使用」的豁免情形。授权时会显示「Google 尚未验证此应用」提示，这是预期内的。</p>
+
+  <footer>
+    <p>最后更新：2026-10-03 &middot; <a href="privacy.html">隐私权政策</a></p>
+    <p>This is a personal, locally-run tool. It is not a public service and has no end users other than its owner.</p>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私权政策 - AI需求雷达</title>
+<style>
+  :root { --bg:#0e2036; --card:#152b45; --fg:#e6f1f8; --muted:#9fb6c9; --accent:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:linear-gradient(180deg,#0e2036,#081424); color:var(--fg);
+         font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+         line-height:1.75; }
+  .wrap { max-width:760px; margin:0 auto; padding:64px 24px 80px; }
+  h1 { font-size:24px; margin:0 0 6px; }
+  .sub { color:var(--muted); font-size:14px; margin:0 0 28px; }
+  h2 { font-size:17px; margin:34px 0 10px; color:var(--accent); }
+  p, li { font-size:15px; }
+  ul { padding-left:22px; }
+  .card { background:var(--card); border:1px solid rgba(56,189,248,.18); border-radius:12px; padding:18px 20px; margin:18px 0; }
+  a { color:var(--accent); }
+  footer { margin-top:48px; padding-top:20px; border-top:1px solid rgba(159,182,201,.2);
+           color:var(--muted); font-size:13px; }
+  code { background:rgba(56,189,248,.12); padding:2px 6px; border-radius:5px; font-size:13px; }
+  .en { color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>隐私权政策</h1>
+  <p class="sub">AI需求雷达 / AI Demand Radar &middot; 生效日期：2026-10-03</p>
+
+  <div class="card">
+    <p><strong>一句话说明：</strong>本应用是仅供账号所有者本人使用的本地工具。它不收集、不存储、不分享任何他人的数据，也不会把 Google 用户数据用于广告或模型训练。</p>
+  </div>
+
+  <h2>1. 本应用的性质</h2>
+  <p>AI需求雷达（下称「本应用」）是一个在账号所有者本人电脑上运行的本地程序，不提供任何面向公众的在线服务，没有服务器后端，也没有除所有者之外的终端用户。因此本政策描述的是所有者本人的数据如何被处理。</p>
+
+  <h2>2. 访问的 Google 用户数据及其用途</h2>
+  <p>本应用通过 Google OAuth 2.0 请求以下权限，且仅用于所列用途：</p>
+  <ul>
+    <li>
+      <code>https://www.googleapis.com/auth/spreadsheets</code><br>
+      <strong>用途：</strong>读写账号所有者本人拥有的 Google 表格，用于保存与更新整理后的需求信息。<br>
+      <strong>范围：</strong>仅限所有者本人指定的那一个表格。
+    </li>
+    <li>
+      <code>https://www.googleapis.com/auth/gmail.send</code><br>
+      <strong>用途：</strong>以所有者本人身份，向所有者本人在配置文件中固定指定的收件地址发送任务报告邮件。<br>
+      <strong>范围：</strong>只能发送邮件。<strong>本应用没有请求任何邮箱读取权限</strong>，无法读取、搜索、修改或删除任何邮件。
+    </li>
+  </ul>
+  <p>本应用<strong>不访问</strong> Google 云端硬盘中的其他文件、联系人、日历、位置或任何其他 Google 服务数据。</p>
+
+  <h2>3. 数据的使用方式</h2>
+  <ul>
+    <li>Google 用户数据<strong>仅用于实现本应用的核心功能</strong>（写入表格、发送报告）。</li>
+    <li><strong>不用于广告</strong>，不用于用户画像，不用于任何形式的商业推广。</li>
+    <li><strong>不用于训练或改进任何机器学习模型</strong>。</li>
+    <li>本应用对人类与自动化方式读取 Google 用户数据的限制遵循
+        <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 服务用户数据政策</a>，
+        包括其「有限使用（Limited Use）」要求。</li>
+  </ul>
+
+  <h2>4. 数据的存储与保护</h2>
+  <ul>
+    <li>采集内容、分析结果与运行日志<strong>仅存储在所有者本机</strong>的本地目录中，不上传至任何第三方服务器。</li>
+    <li>OAuth 授权令牌保存在本机，文件权限设为仅所有者可读（<code>0600</code>），且不会被提交到任何代码仓库。</li>
+    <li>本应用使用传输层加密（HTTPS/TLS）与 Google 接口通信。</li>
+  </ul>
+
+  <h2>5. 数据的共享</h2>
+  <ul>
+    <li><strong>不向任何第三方出售、出租或分享 Google 用户数据。</strong></li>
+    <li>为完成文本分析，本应用会把<strong>从公开渠道采集的正文内容</strong>发送给第三方大语言模型服务（DeepSeek）。
+        该内容<strong>不包含任何 Google 用户数据</strong>，也不包含所有者的个人信息。</li>
+    <li>除遵守法律要求外，不会因其他原因披露数据。</li>
+  </ul>
+
+  <h2>6. 数据的保留与删除</h2>
+  <ul>
+    <li>本地数据可由所有者随时删除，删除后不可恢复。</li>
+    <li>表格中的数据由所有者本人在 Google 表格中自行管理。</li>
+  </ul>
+
+  <h2>7. 撤销授权</h2>
+  <p>所有者可随时撤销本应用的访问权限：</p>
+  <ul>
+    <li>访问 <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 账号的第三方应用与权限页面</a>，找到本应用并选择「移除访问权限」；或</li>
+    <li>直接删除本机的授权令牌文件，并在 Google 账号页面撤销访问权限。</li>
+  </ul>
+  <p>撤销后本应用将无法继续访问 Google 数据，但已写入表格中的内容不会被自动删除。</p>
+
+  <h2>8. 儿童隐私</h2>
+  <p>本应用不面向儿童，也不会有意收集儿童的任何信息。</p>
+
+  <h2>9. 政策变更</h2>
+  <p>本政策如有变更，将更新本页面并修改顶部的生效日期。</p>
+
+  <h2>10. 联系方式</h2>
+  <p>如对本政策有任何疑问，请联系：<a href="mailto:weldonwu502@gmail.com">weldonwu502@gmail.com</a></p>
+
+  <hr style="border:0;border-top:1px solid rgba(159,182,201,.2);margin:36px 0">
+
+  <h2 class="en">English Summary</h2>
+  <p class="en">AI Demand Radar is a personal, locally-run tool with no public service and no end users other than its owner. It requests only two Google scopes: <code>spreadsheets</code> (to read and write the owner's own spreadsheet) and <code>gmail.send</code> (to email reports to a fixed address configured by the owner). It does <strong>not</strong> request any Gmail read access. Google user data is used solely to provide these features, is never sold or shared with third parties, is never used for advertising, and is never used to train machine learning models. Data is stored locally on the owner's machine. Access can be revoked at any time via the Google Account permissions page.</p>
+
+  <footer>
+    <p>最后更新：2026-10-03 &middot; <a href="index.html">返回首页</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
